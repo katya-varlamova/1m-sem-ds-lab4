@@ -69,6 +69,7 @@ jobs:
           DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
         run: |
+          echo $DOCKER_USER
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           docker compose build
           docker push katyavarlamova/api-gateway
