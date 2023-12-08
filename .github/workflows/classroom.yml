@@ -72,9 +72,13 @@ jobs:
           echo $DOCKER_USER
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           docker compose build
+          docker tag api-gateway katyavarlamova/api-gateway
           docker push katyavarlamova/api-gateway
+          docker tag bonus-service katyavarlamova/bonus-service
           docker push katyavarlamova/bonus-service
+          docker tag flight-service katyavarlamova/flight-service
           docker push katyavarlamova/flight-service
+          docker tag ticket-service katyavarlamova/ticket-service
           docker push katyavarlamova/ticket-service
 
 
