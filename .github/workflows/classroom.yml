@@ -106,6 +106,15 @@ jobs:
           source ~/vk-cloud-solutions/path.bash.inc
           helm upgrade --install flights ./kubernetes/flights
           kubectl apply -f ./kubernetes/ingress.yaml
+          echo "185.130.113.206 katyavarlamova.ds.com" >> /etc/hosts
+          
+      - name: Run API Tests
+        uses: matt-ball/newman-action@master
+        with:
+          collection: v1/postman/collection.json
+          environment: v1/postman/environment_deploy.json
+          delayRequest: 100
+          reporters: '[ "cli" ]'
 
       - name: Stop containers
         if: always()
