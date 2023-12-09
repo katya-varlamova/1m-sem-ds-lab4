@@ -108,7 +108,11 @@ jobs:
           kubectl apply -f ./kubernetes/ingress.yaml
           echo "185.130.113.206 katyavarlamova.ds.com" >> /etc/hosts
           
-      - name: Run API Tests
+      - name: Add hosts to /etc/hosts
+        run: |
+          sudo echo "185.130.113.206 katyavarlamova.ds.com" | sudo tee -a /etc/hosts
+                
+      - name: Run API Tests on deploy
         uses: matt-ball/newman-action@master
         with:
           collection: v1/postman/collection.json
