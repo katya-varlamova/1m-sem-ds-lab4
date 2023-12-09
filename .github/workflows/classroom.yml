@@ -116,7 +116,7 @@ jobs:
         with:
           collection: v1/postman/collection.json
           environment: v1/postman/environment_deploy.json
-          delayRequest: 100
+          delayRequest: 5000
           reporters: '[ "cli" ]'
           insecure: true
 
