@@ -106,8 +106,6 @@ jobs:
           source ~/vk-cloud-solutions/path.bash.inc
           helm upgrade --install flights ./kubernetes/flights
           kubectl apply -f ./kubernetes/ingress.yaml
-          echo "185.130.113.206 katyavarlamova.ds.com" >> /etc/hosts
-          
       - name: Add hosts to /etc/hosts
         run: |
           sudo echo "185.130.113.206 katyavarlamova.ds.com" | sudo tee -a /etc/hosts
