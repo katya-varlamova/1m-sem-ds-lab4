@@ -1,4 +1,7 @@
 # Лабораторная работа #4
+## Студент
+Варламова Екатерина ИУ7-13М
+
 
 ![GitHub Classroom Workflow](../../workflows/GitHub%20Classroom%20Workflow/badge.svg?branch=master)
 
